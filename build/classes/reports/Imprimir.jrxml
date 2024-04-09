@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Imprimir" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4272f38-e25f-44d5-b868-63c558aab650">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="os" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tbordemservico where os = $P{os}]]>
+	</queryString>
+	<field name="os" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataos" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mercadoria" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="problema" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="servico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tecnico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idcliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="51" height="20" uuid="08eb4fbd-5da7-44f2-8734-6d27f78e4d9b"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SGOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="39" width="46" height="20" uuid="f1f3da94-e95a-44a1-8fe9-68f8297f6501"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="39" width="46" height="20" uuid="7c041e4b-ff5a-43ec-9912-d8b788de52ad"/>
+				<textFieldExpression><![CDATA[$F{os}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="362" y="39" width="60" height="20" uuid="17756037-16f8-48e1-a145-6d3fffe0b875"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Técnico:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="39" width="100" height="20" uuid="7ef3989f-9b04-40e7-a9b1-d5370a2c6c19"/>
+				<textFieldExpression><![CDATA[$F{tecnico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="365" y="59" width="40" height="20" uuid="e4428738-4c9a-4c3d-a188-d987e69fc50f"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="402" y="59" width="100" height="20" uuid="20d4dbc5-48a6-4c33-9f0d-20e4ec1d0c53"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="61" y="59" width="122" height="20" uuid="07738ec7-34a6-44c0-9499-a8d09a7942a8"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código do Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="59" width="34" height="20" uuid="72078a04-7e75-4adb-a5bd-c1821c537541"/>
+				<textFieldExpression><![CDATA[$F{idcliente}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="349" y="0" width="206" height="20" uuid="c666f8bc-2fb6-416d-b54a-7e692698d1f1"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="0" width="69" height="20" uuid="10d0fe1e-5ebd-47f1-93b2-a4ceac0d613b"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataOs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="0" width="58" height="20" uuid="c24c84f3-67a4-4489-b083-f6383947419c"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="0" width="100" height="20" uuid="304a5a71-c142-469f-8bfa-b28d06f414b3"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="0" width="100" height="20" uuid="17fe9098-d0d9-4dcd-be4c-ebc5e9f9267d"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Equipamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="0" width="100" height="20" uuid="826003bc-df65-4454-94ff-e662e8b5944e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Problema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="477" y="0" width="100" height="20" uuid="62ff5092-b3a2-4be5-b7f6-bfc0818c0dcd"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serviço]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="7" y="0" width="59" height="20" uuid="35847c24-0e27-48c1-8963-5009f47f04f3"/>
+				<textFieldExpression><![CDATA[$F{dataos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="0" width="96" height="20" uuid="2106aac3-cc99-484a-94de-66cdc3cd6747"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="100" height="20" uuid="ebbb0e98-002a-444d-bfcb-053e55d5e3ea"/>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="0" width="100" height="20" uuid="ca7de57d-c50b-4da2-bd57-206eeb25b7b7"/>
+				<textFieldExpression><![CDATA[$F{mercadoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="100" height="20" uuid="bd31a4bb-ea87-4987-92a2-704d91cca693"/>
+				<textFieldExpression><![CDATA[$F{problema}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="0" width="100" height="20" uuid="e5fb4014-b852-4431-b371-a4220f2c5710"/>
+				<textFieldExpression><![CDATA[$F{servico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="535" y="34" width="20" height="20" uuid="d79a697a-cbca-4cf2-9026-d1e9f06f980a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,11 @@
+As instruções abaixo ajudam o utilizador a manejar de forma fluido o programa.
+As mesmas servem de base, uma vez que o banco de dados não foi migrado / alocado num servidor web.
+
+1- Abrir o programa usando uma IDE para desenvolvimento java;
+2- Abri/ importar o prjecto na IDE, de modo a trabalhar com as respectivas telas e ter acesso ao código fonte;
+3- Abrir apenas o executável, mas neste caso teria que importar o dump da db para a sua máquina local, no aplicativo MySQL Workbench de preferência e só assim poder usar. Lembrando que os dados de acesso de login podem consultados no phpmyadmin do servidor xampp.
+
+Para on caso de qualquer dúvida, entrar em contacto com o desenvolvedor do software.
+
+
+Copyright 2023 Alves Hatewa.
